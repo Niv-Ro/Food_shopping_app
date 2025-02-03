@@ -67,6 +67,7 @@ public class Register_page extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.register_page, container, false);
         Button button_Register = view.findViewById(R.id.reg_register_button);
+        Button button_Login_Page = view.findViewById(R.id.register_log_button);
 
         button_Register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +90,13 @@ public class Register_page extends Fragment {
                     Toast.makeText(requireContext(), "All fields should be filled", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        button_Login_Page.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_register_to_login);
             }
         });
         return view;
