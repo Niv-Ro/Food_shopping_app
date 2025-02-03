@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/fragmentOne">
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.example.my_second_application.fragments.Register_page"
+        android:label="fragment_three"
+        tools:layout="@layout/register_page" >
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/fragmentOne" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.example.my_second_application.fragments.Logged_in_page"
+        android:label="fragment_two"
+        tools:layout="@layout/logged_in_page" >
+        <action
+            android:id="@+id/action_fragmentTwo_to_checkout"
+            app:destination="@id/checkout" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.example.my_second_application.fragments.Login_page"
+        android:label="FragmentOne" >
+        <action
+            android:id="@+id/action_fragment_login_to_app"
+            app:destination="@id/fragmentTwo" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/fragmentThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkout"
+        android:name="com.example.my_second_application.fragments.Checkout_page"
+        android:label="fragment_checkout"
+        tools:layout="@layout/fragment_checkout" >
+        <action
+            android:id="@+id/action_checkout_to_fragmentTwo"
+            app:destination="@id/fragmentTwo" />
+    </fragment>
+</navigation>
